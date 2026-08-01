@@ -64,3 +64,46 @@
 
   document.addEventListener('DOMContentLoaded', render);
 })();
+
+/* ═══ SEO: update meta dinamis setelah artikel dimuat ═══ */
+(function updateSEOMeta() {
+  const origRender = window.renderArtikelDetail || null;
+  const applyMeta = (artikel) => {
+    if (!artikel) return;
+    const title = artikel.title ? artikel.title + " — Sekar Jagad 43" : document.title;
+    const desc = (artikel.excerpt || artikel.content || "").toString().replace(/<[^>]*>/g, "").slice(0, 155);
+    document.title = title;
+    const setMeta = (sel, attr, val) => {
+      const el = document.querySelector(sel);
+      if (el) el.setAttribute(attr, val);
+    };
+    setMeta('meta[name="description"]', "content", desc);
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", desc);
+    setMeta('meta[property="og:url"]', "content", window.location.href);
+    setMeta('link[rel="canonical"]', "href", window.location.href);
+    if (artikel.cover_url) setMeta('meta[property="og:image"]', "content", artikel.cover_url);
+  };
+  const orig = window.API && window.API.loadArtikel ? window.API.loadArtikel : null;
+  if (orig) {
+    const wrapped = async (...args) => {
+      const r = await orig.apply(window.API, args);
+      if (r) applyMeta(r);
+      return r;
+    };
+    window.API.loadArtikel = wrapped;
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    if (!id) return;
+    const tryApply = () => {
+      const el = document.querySelector(".artikel-title, h1");
+      if (el && el.textContent.trim()) {
+        applyMeta({ title: el.textContent.trim(), excerpt: el.textContent.trim() });
+      }
+    };
+    setTimeout(tryApply, 1200);
+    setTimeout(tryApply, 3000);
+  });
+})();

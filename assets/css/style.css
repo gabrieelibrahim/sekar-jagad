@@ -26,6 +26,7 @@
     --accent: oklch(0.58 0.085 62);
     --accent-light: oklch(0.70 0.070 62);
     --accent-dark: oklch(0.45 0.080 62);
+    --accent-bg: oklch(0.58 0.085 62 / 0.12);
 
     --bg: oklch(0.98 0.002 60);
     --surface: oklch(0.955 0.003 60);
@@ -276,6 +277,10 @@
   }
 
   .navbar.scrolled .nav-toggle span {
+    background: var(--ink);
+  }
+
+  .nav-toggle.active span {
     background: var(--ink);
   }
 
@@ -617,11 +622,45 @@
 
 /* ═══ PACKAGES ═══ */
 @layer components {
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* Slider paket (1 baris, mirip galeri/artikel) */
+  .paket-slider-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .paket-slider-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    flex: 1;
+  }
+
+  .paket-slider-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .paket-slider-track {
+    display: flex;
     gap: var(--space-lg);
-    align-items: start;
+    width: max-content;
+  }
+
+  /* Paket ≤3: tidak scroll, semua kartu tampil, dipusatkan */
+  .paket-slider-wrap.paket-centered {
+    justify-content: center;
+  }
+
+  .paket-slider-wrap.paket-centered .paket-slider-track.paket-track-fit {
+    width: auto;
+  }
+
+  .paket-slider-wrap.paket-centered .paket-slider-scroll.paket-scroll-fit {
+    overflow: visible;
   }
 
   .package-card {
@@ -632,6 +671,17 @@
     transition: transform var(--dur-fast) var(--ease-out-expo),
                 box-shadow var(--dur-fast) var(--ease-out-expo);
     position: relative;
+
+    /* Kartu dalam slider: lebar tetap + tinggi seragam meski isi beda */
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+
+  .package-card .package-body {
+    flex: 1 1 auto;
   }
 
   .package-card:hover {
@@ -1009,17 +1059,24 @@
     align-items: flex-start;
   }
 
-  .contact-item i {
-    width: 40px;
-    height: 40px;
+  .contact-item .contact-icon-link {
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
-    background: oklch(0.58 0.085 62 / 0.1);
+    background: var(--accent-bg);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 1.15rem;
     color: var(--accent);
+  }
+
+  .contact-item .contact-icon-link:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.05);
   }
 
   .contact-item h4 {
@@ -1208,11 +1265,136 @@
   }
 }
 
+/* ═══ MEGA MENU "Layanan" ═══ */
+@layer components {
+  .nav-item-mega {
+    position: relative;
+  }
+
+  .mega-panel {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    width: min(680px, 92vw);
+    background: var(--white);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid oklch(0 0 0 / 0.06);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-fast) var(--ease-out-expo),
+                transform var(--dur-fast) var(--ease-out-expo),
+                visibility var(--dur-fast);
+    z-index: var(--z-dropdown);
+    padding: var(--space-lg);
+    text-align: left;
+  }
+
+  .mega-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  .mega-panel-title {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--ink-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .mega-menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .mega-menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border-radius: var(--r-sm);
+    transition: background var(--dur-fast);
+  }
+
+  .mega-menu-item:hover {
+    background: var(--accent-bg);
+  }
+
+  .mega-item-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-sm);
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 1rem;
+  }
+
+  .mega-item-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .mega-item-text strong {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mega-item-text small {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Mobile: mega panel jadi statis di dalam dropdown */
+  @media (max-width: 768px) {
+    .nav-item-mega {
+      width: 100%;
+    }
+    .mega-panel {
+      position: static;
+      transform: none;
+      width: 100%;
+      box-shadow: none;
+      border: 1px solid oklch(0 0 0 / 0.06);
+      margin-top: var(--space-sm);
+      display: none;
+      padding: var(--space-md);
+    }
+    .mega-panel.open {
+      display: block;
+      transform: none;
+    }
+    .mega-menu-items {
+      grid-template-columns: 1fr;
+    }
+    .mega-menu-item {
+      padding: var(--space-sm) 0;
+    }
+  }
+}
+
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 1024px) {
   .section { padding-block: var(--space-2xl); }
   .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-  .packages-grid,
   .testimonials-grid,
   .grid-3,
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1230,26 +1412,64 @@
     right: -100%;
     width: 260px;
     height: 100vh;
-    background: var(--white);
+    background: linear-gradient(180deg, var(--white) 0%, oklch(0.97 0.005 258) 100%);
     flex-direction: column;
-    padding: 80px var(--space-lg) var(--space-lg);
-    box-shadow: -4px 0 24px oklch(0 0 0 / 0.1);
+    padding: 120px var(--space-lg) var(--space-lg);
+    box-shadow: -8px 0 32px oklch(0 0 0 / 0.1);
     transition: right var(--dur-slow) var(--ease-out-expo);
     align-items: flex-start;
-    gap: 0;
+    gap: 6px;
+    z-index: 99;
+    border-left: 3px solid var(--accent);
+  }
+
+  .nav-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
   }
 
   .nav-menu.active { right: 0; }
 
   .nav-link {
     color: var(--ink-muted) !important;
-    font-size: 0.95rem;
-    padding: 12px 0;
+    font-size: 1rem;
+    padding: 14px 16px;
     width: 100%;
-    border-radius: 0;
+    border-radius: var(--r-sm);
+    transition: background var(--dur-fast), color var(--dur-fast);
+    font-weight: 500;
+    position: relative;
   }
 
-  .nav-toggle { display: flex; }
+  .nav-link.active {
+    color: var(--accent) !important;
+    background: var(--accent-bg);
+    font-weight: 600;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .nav-link:hover {
+    color: var(--ink) !important;
+    background: oklch(0 0 0 / 0.04);
+  }
+
+  .nav-toggle { display: flex !important; }
 
   .hero { min-height: 90vh; }
   .hero-stats { gap: var(--space-lg); }
@@ -1268,7 +1488,6 @@
   .services-list,
   .about-features { grid-template-columns: 1fr; }
 
-  .packages-grid,
   .testimonials-grid,
   .grid-3 {
     grid-template-columns: 1fr;
@@ -1290,7 +1509,7 @@
   .hero { min-height: 85vh; }
   .hero-content h1 { font-size: clamp(1.5rem, 8vw, 2rem); }
   .service-item { padding: var(--space-md); }
-  .contact-item i { width: 34px; height: 34px; font-size: 0.85rem; }
+  .contact-item .contact-icon-link { width: 40px; height: 40px; font-size: 1.05rem; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; }
   .about-features { grid-template-columns: 1fr; }

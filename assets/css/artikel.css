@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════════════
+   SEKAR JAGAD 43 — Halaman Artikel
+   Mengikuti design system style.css (token, kartu, tombol).
+   ═══════════════════════════════════════════════ */
+
+/* Halaman artikel memakai navbar fixed → beri padding-top */
+.artikel-page {
+  padding-top: 84px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.artikel-hero {
+  padding-block: var(--space-3xl) var(--space-2xl);
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  color: var(--white);
+}
+
+.artikel-hero .container { position: relative; z-index: 2; }
+
+.artikel-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.artikel-hero p {
+  color: oklch(1 0 0 / 0.7);
+  margin-top: var(--space-md);
+  max-width: 56ch;
+}
+
+/* ── Daftar artikel ── */
+.artikel-section {
+  padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.artikel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.artikel-card {
+  background: var(--white);
+  border-radius: var(--r-md);
+  border: 1px solid oklch(0 0 0 / 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dur-fast) var(--ease-out-expo),
+              box-shadow var(--dur-fast) var(--ease-out-expo);
+}
+
+.artikel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Kartu yang seluruhnya link (artikel & layanan) */
+a.artikel-card-link {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.artikel-card-link:hover {
+  color: inherit;
+}
+
+a.artikel-card-link h3 {
+  color: var(--ink);
+}
+
+.artikel-card-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: oklch(0.30 0.030 258 / 0.08);
+  display: block;
+}
+
+.artikel-card-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.artikel-card-category {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+
+.artikel-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.artikel-card h3 a { color: inherit; }
+.artikel-card h3 a:hover { color: var(--brand); }
+
+.artikel-card-excerpt {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.artikel-card-meta {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  border-top: 1px solid oklch(0 0 0 / 0.04);
+  padding-top: var(--space-sm);
+}
+
+.artikel-empty {
+  text-align: center;
+  color: var(--ink-muted);
+  padding-block: var(--space-3xl);
+}
+
+.artikel-loading {
+  text-align: center;
+  color: var(--ink-muted);
+  padding-block: var(--space-3xl);
+}
+
+/* ── Detail artikel ── */
+.artikel-detail-section {
+  padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.artikel-detail {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.artikel-detail-header { margin-bottom: var(--space-xl); }
+
+.artikel-detail-header .artikel-card-category { margin-bottom: var(--space-md); }
+
+.artikel-detail-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.artikel-detail-meta {
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.artikel-detail-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-xl);
+  background: oklch(0.30 0.030 258 / 0.08);
+}
+
+.artikel-body { color: var(--ink); }
+
+.artikel-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.artikel-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.artikel-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: var(--space-md);
+}
+
+.artikel-body ul {
+  list-style: none;
+  margin: 0 0 var(--space-md);
+}
+
+.artikel-body ul li {
+  position: relative;
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.artikel-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.artikel-detail-actions {
+  margin-top: var(--space-2xl);
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* ── Artikel terbaru di homepage (slider 1 baris) ── */
+.artikel-slider-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.artikel-slider-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+.artikel-slider-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.artikel-slider-track {
+  display: flex;
+  gap: var(--space-lg);
+  width: max-content;
+}
+
+.artikel-slider-item {
+  flex-shrink: 0;
+  width: 340px;
+  scroll-snap-align: start;
+}
+
+.artikel-home-more {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+/* ── Daftar layanan (layanan.html tanpa ?slug) ── */
+.layanan-card {
+  text-align: center;
+  justify-content: center;
+  padding-top: var(--space-lg);
+}
+
+.layanan-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.hidden { display: none !important; }
+
+/* ── Pagination (halaman daftar artikel) ── */
+.artikel-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.pagination-info {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-right: var(--space-sm);
+}
+
+.pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  padding-inline: 10px;
+  border-radius: var(--r-md);
+  background: var(--white);
+  border: 1px solid oklch(0 0 0 / 0.1);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.pagination-btn.active {
+  background: var(--brand);
+  color: var(--white);
+  border-color: var(--brand);
+  cursor: default;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-dots {
+  color: var(--ink-muted);
+  padding-inline: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .artikel-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .artikel-slider-item { width: 280px; }
+}
+
+@media (max-width: 768px) {
+  .artikel-grid { grid-template-columns: 1fr; }
+  .artikel-home-grid { grid-template-columns: 1fr; }
+  .artikel-hero { padding-block: var(--space-xl); }
+}

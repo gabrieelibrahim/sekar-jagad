@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // internal links only
-      const internalLinks = navLinks.filter(l => l.getAttribute('href').startsWith('#'));
-      internalLinks.forEach(l => l.classList.remove('active'));
-      internalLinks.forEach(l => {
-        if (l.getAttribute('href') === '#' + current) {
-          l.classList.add('active');
-        }
+      // Scrollspy: link aktif untuk section saat ini.
+      // Internal link "#id" DAN link ke halaman luar "id.html" (mis. Artikel → artikel.html)
+      // ikut ter-highlight saat section terkait tampil.
+      navLinks.forEach(l => {
+        const href = l.getAttribute('href');
+        const isMatch = href === '#' + current || href === current + '.html';
+        l.classList.toggle('active', isMatch);
       });
     };
 

@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════
+   SEKAR JAGAD 43 — Panel Admin (tambahan di atas AdminLTE 4)
+   AdminLTE + Bootstrap sudah menyediakan card, table, btn, form.
+   File ini hanya berisi pengaturan khusus.
+   ═══════════════════════════════════════════════ */
+
+/* Brand — selaras navbar utama (nilai sama dgn style.css)
+   style.css tidak dimuat di halaman admin, jadi didefinisikan ulang. */
+:root {
+  --brand: oklch(0.30 0.030 258);
+  --brand-dark: oklch(0.22 0.025 258);
+  --brand-hover: oklch(0.24 0.028 258);
+  --accent: oklch(0.58 0.085 62);
+}
+
+/* Brand pada sidebar */
+.app-sidebar .brand-text {
+  font-size: 1rem;
+}
+
+/* ═══ Kartu login — biru sesuai navbar ═══ */
+.login-brand-card {
+  --bs-card-border-color: var(--brand);
+  border-top-color: var(--brand) !important;
+  border: 1px solid var(--brand);
+}
+
+.login-brand-card .card-header {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  color: #fff;
+  border-bottom: 0;
+}
+
+.login-brand-card .card-header .fs-5 {
+  color: #fff;
+}
+
+.login-brand-card .card-header .text-secondary {
+  color: oklch(1 0 0 / 0.75) !important;
+}
+
+.login-brand-card .login-logo-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 14px oklch(0 0 0 / 0.25);
+  padding: 6px;
+}
+
+.login-brand-card .btn-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.login-brand-card .btn-primary:hover,
+.login-brand-card .btn-primary:focus {
+  background: var(--brand-hover);
+  border-color: var(--brand-hover);
+}
+
+/* Panel ditampilkan/hilang */
+.admin-panel { display: none; }
+.admin-panel.active { display: block; }
+
+/* Grid galeri admin */
+.admin-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.admin-gallery-grid .card-img-top {
+  background: #f1f3f5;
+}
+
+/* Form artikel (textarea besar) */
+textarea#f_content { min-height: 260px; }
+
+/* fs-7 utilitas (AdminLTE menyediakan fs-7) */
+.fs-7 { font-size: 0.875rem !important; }
+
+/* Responsive: di layar kecil, aksi tabel tetap rapi */
+@media (max-width: 576px) {
+  .table-responsive { border: 0; }
+}
+
+/* ═══ Icon picker ═══ */
+.icon-picker-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
+.icon-picker-preview {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef1ff;
+  color: var(--brand);
+  border-radius: 8px;
+  border: 1px dashed var(--brand);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.icon-picker-preview:hover {
+  background: #dfe4ff;
+}
+
+.icon-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.icon-picker-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: #fff;
+  color: #495057;
+  font-size: 0.72rem;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.icon-picker-item i {
+  font-size: 1.3rem;
+  color: var(--brand);
+}
+
+.icon-picker-item:hover {
+  border-color: var(--brand);
+  background: #f5f7ff;
+}
+
+.icon-picker-item.active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.icon-picker-item.active i {
+  color: #fff;
+}

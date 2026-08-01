@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sekar Jagad 43 — Handling Bandara Umrah | Terpercaya sejak 2015</title>
-  <meta name="description" content="Jasa handling bandara untuk travel umrah Indonesia di Jeddah, Mekkah, Madinah. Imigrasi kilat, porter service, transportasi & pendampingan jamaah 24 jam.">
+  <meta name="description" content="Jasa handling bandara untuk travel umrah Indonesia di Jeddah, Madinah. Imigrasi kilat, porter service, transportasi & pendampingan jamaah 24 jam.">
   <meta name="keywords" content="handling umrah, travel umrah, porter service, imigrasi kilat, sekar jagad 43">
   <meta name="author" content="Sekar Jagad 43">
 
@@ -25,8 +25,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/artikel.css?v=5">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
 <body>
 
@@ -42,12 +45,16 @@
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link active">Beranda</a></li>
-        <li><a href="#about" class="nav-link">Tentang</a></li>
-        <li><a href="#services" class="nav-link">Layanan</a></li>
-        <li><a href="#packages" class="nav-link">Paket</a></li>
+        <li class="nav-item-mega nav-has-mega">
+          <a href="#services" class="nav-link">Layanan <i class="fas fa-chevron-down mega-chevron"></i></a>
+          <div class="mega-panel">
+            <div class="mega-panel-title">Layanan Kami</div>
+            <div class="mega-menu-items"></div>
+          </div>
+        </li>
         <li><a href="#gallery" class="nav-link">Galeri</a></li>
         <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="artikel.html" class="nav-link">Artikel</a></li>
         <li><a href="#contact" class="nav-link">Kontak</a></li>
       </ul>
     </div>
@@ -60,7 +67,7 @@
       <div class="hero-layout">
         <div class="hero-content">
           <h1>Handling Bandara<br>untuk Travel <span class="accent">Umrah</span> Indonesia</h1>
-          <p>Layanan handling jamaah profesional di Jeddah, Mekkah, dan Madinah. Amanah, cepat, berpengalaman sejak 2015.</p>
+          <p>Layanan handling jamaah profesional di Jeddah, dan Madinah. Amanah, cepat, berpengalaman sejak 2015.</p>
           <div class="hero-cta">
             <a href="#packages" class="btn btn-primary">Lihat Paket Layanan</a>
             <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20layanan%20Sekar%20Jagad%2043" target="_blank" class="btn btn-outline" rel="noopener"><i class="fab fa-whatsapp"></i> Konsultasi Gratis</a>
@@ -91,12 +98,12 @@
             <h2>Tentang Sekar Jagad 43</h2>
           </div>
           <p>Sejak 2015, Sekar Jagad 43 telah menjadi mitra terpercaya bagi travel umrah Indonesia dalam memberikan layanan handling bandara di Arab Saudi. Kami hadir untuk memastikan perjalanan ibadah jamaah berjalan lancar, nyaman, dan penuh keberkahan.</p>
-          <p>Berbasis di Jeddah dengan jangkauan layanan hingga Mekkah dan Madinah, tim profesional kami siap mendampingi setiap perjalanan dengan penuh amanah dan dedikasi tinggi.</p>
+          <p>Berbasis di Jeddah dengan jangkauan layanan hingga Madinah, tim profesional kami siap mendampingi setiap perjalanan dengan penuh amanah dan dedikasi tinggi.</p>
           <div class="about-features">
             <div class="about-feature">Berpengalaman sejak 2015</div>
             <div class="about-feature">Tim Profesional &amp; Amanah</div>
             <div class="about-feature">Layanan 24 Jam Non-Stop</div>
-            <div class="about-feature">Jangkauan Jeddah – Mekkah – Madinah</div>
+            <div class="about-feature">Jangkauan Jeddah – Madinah</div>
           </div>
         </div>
       </div>
@@ -110,7 +117,7 @@
         <h2>Solusi Lengkap Handling Bandara</h2>
         <p>Dari mendarat hingga check-in hotel — satu mitra untuk semua kebutuhan.</p>
       </div>
-      <div class="services-list">
+      <div class="services-list" id="servicesGrid">
         <div class="service-item js-reveal">
           <div class="service-icon"><i class="fas fa-passport"></i></div>
           <div>
@@ -143,7 +150,7 @@
           <div class="service-icon"><i class="fas fa-bus"></i></div>
           <div>
             <h3>Penanganan Transportasi</h3>
-            <p>Armada nyaman dari bandara ke hotel dan antar kota (Jeddah–Mekkah–Madinah).</p>
+            <p>Armada nyaman dari bandara ke hotel dan antar kota (Jeddah–Madinah).</p>
           </div>
         </div>
         <div class="service-item js-reveal">
@@ -153,6 +160,9 @@
             <p>Pendampingan penuh selama jamaah berada di Arab Saudi, siaga setiap saat.</p>
           </div>
         </div>
+      </div>
+      <div id="servicesMore" class="artikel-home-more hidden">
+        <a href="layanan.html" class="btn btn-outline">Selengkapnya</a>
       </div>
     </div>
   </section>
@@ -164,84 +174,64 @@
         <h2>Pilih Paket Sesuai Kebutuhan Travel Anda</h2>
         <p>Harga mulai dari 95–100 SAR per pax. Layanan 24 jam non-stop. Hubungi kami untuk diskon rombongan.</p>
       </div>
-      <div class="packages-grid">
-        <!-- Standar -->
-        <div class="package-card js-reveal">
-          <div class="package-badge">Populer</div>
-          <div class="package-header">
-            <h3>Paket Standar</h3>
-            <div class="package-price">
-              <span class="price">95</span>
-              <span class="suffix">SAR /pax</span>
+      <div class="paket-slider-wrap" id="paketSliderWrap">
+        <button class="gallery-btn paket-slider-prev" aria-label="Paket sebelumnya"><i class="fas fa-chevron-left"></i></button>
+        <div class="paket-slider-scroll" id="paketSlider">
+          <div class="paket-slider-track" id="packagesGrid">
+            <!-- Standar -->
+            <div class="package-card js-reveal" data-static-card>
+              <div class="package-badge">Populer</div>
+              <div class="package-header">
+                <h3>Paket Bandara Baru Jeddah</h3>
+                <div class="package-price">
+                  <span class="price">95</span>
+                  <span class="suffix">SAR /pax</span>
+                </div>
+              </div>
+              <div class="package-body">
+                <ul class="package-features">
+                  <li><i class="fas fa-check"></i> Jasa Porter Bandara</li>
+                  <li><i class="fas fa-check"></i> Konsumsi</li>
+                  <li><i class="fas fa-check"></i> Pembimbing jamaah</li>
+                  <li><i class="fas fa-check"></i> Boarding Pass Pesawat</li>
+                  <li><i class="fas fa-check"></i> Pengamanan Koper</li>
+                  <li><i class="fas fa-check"></i> Free Zam-Zam 5L</li>
+                  <li><i class="fas fa-check"></i> Pendampingan Penuh</li>
+                </ul>
+              </div>
+              <div class="package-footer">
+                <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20Paket%20Standar%20Handling%20(95%20SAR%20per%20pax)%20dari%20Sekar%20Jagad%2043" target="_blank" class="btn btn-whatsapp btn-block" rel="noopener"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
+              </div>
             </div>
-          </div>
-          <div class="package-body">
-            <ul class="package-features">
-              <li><i class="fas fa-check"></i> Penjemputan Bandara</li>
-              <li><i class="fas fa-check"></i> Imigrasi Kilat</li>
-              <li><i class="fas fa-check"></i> Penanganan Bagasi</li>
-              <li><i class="fas fa-check"></i> Porter Service</li>
-              <li><i class="fas fa-check"></i> Transportasi ke Hotel</li>
-              <li><i class="fas fa-times"></i> Konsumsi</li>
-              <li><i class="fas fa-times"></i> Pendampingan Penuh</li>
-            </ul>
-          </div>
-          <div class="package-footer">
-            <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20Paket%20Standar%20Handling%20(95%20SAR%20per%20pax)%20dari%20Sekar%20Jagad%2043" target="_blank" class="btn btn-whatsapp btn-block" rel="noopener"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
-          </div>
-        </div>
 
-        <!-- Lengkap (featured) -->
-        <div class="package-card featured js-reveal">
-          <div class="package-badge">Rekomendasi</div>
-          <div class="package-header">
-            <h3>Paket Lengkap</h3>
-            <div class="package-price">
-              <span class="price">100</span>
-              <span class="suffix">SAR /pax</span>
+            <!-- Lengkap (featured) -->
+            <div class="package-card featured js-reveal" data-static-card>
+              <div class="package-badge">Rekomendasi</div>
+              <div class="package-header">
+                <h3>Paket Bandara Haji Jeddah</h3>
+                <div class="package-price">
+                  <span class="price">100</span>
+                  <span class="suffix">SAR /pax</span>
+                </div>
+              </div>
+              <div class="package-body">
+                <ul class="package-features">
+                  <li><i class="fas fa-check"></i> Jasa Porter Bandara</li>
+                  <li><i class="fas fa-check"></i> Konsumsi</li>
+                  <li><i class="fas fa-check"></i> Pembimbing jamaah</li>
+                  <li><i class="fas fa-check"></i> Boarding Pass Pesawat</li>
+                  <li><i class="fas fa-check"></i> Pengamanan Koper</li>
+                  <li><i class="fas fa-check"></i> Free Zam-Zam 5L</li>
+                  <li><i class="fas fa-check"></i> Pendampingan Penuh</li>
+                </ul>
+              </div>
+              <div class="package-footer">
+                <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20Paket%20Lengkap%20Handling%20(100%20SAR%20per%20pax)%20dari%20Sekar%20Jagad%2043" target="_blank" class="btn btn-whatsapp btn-block" rel="noopener"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
+              </div>
             </div>
           </div>
-          <div class="package-body">
-            <ul class="package-features">
-              <li><i class="fas fa-check"></i> Penjemputan Bandara</li>
-              <li><i class="fas fa-check"></i> Imigrasi Kilat</li>
-              <li><i class="fas fa-check"></i> Penanganan Bagasi</li>
-              <li><i class="fas fa-check"></i> Porter Service</li>
-              <li><i class="fas fa-check"></i> Transportasi ke Hotel</li>
-              <li><i class="fas fa-check"></i> Konsumsi</li>
-              <li><i class="fas fa-check"></i> Pendampingan Penuh</li>
-            </ul>
-          </div>
-          <div class="package-footer">
-            <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20Paket%20Lengkap%20Handling%20(100%20SAR%20per%20pax)%20dari%20Sekar%20Jagad%2043" target="_blank" class="btn btn-whatsapp btn-block" rel="noopener"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
-          </div>
         </div>
-
-        <!-- Premium -->
-        <div class="package-card js-reveal">
-          <div class="package-badge">VIP</div>
-          <div class="package-header">
-            <h3>Paket Premium</h3>
-            <div class="package-price">
-              <span class="price">100</span>
-              <span class="suffix">SAR /pax</span>
-            </div>
-          </div>
-          <div class="package-body">
-            <ul class="package-features">
-              <li><i class="fas fa-check"></i> Semua Layanan Lengkap</li>
-              <li><i class="fas fa-check"></i> Prioritas Imigrasi</li>
-              <li><i class="fas fa-check"></i> Porter Prioritas</li>
-              <li><i class="fas fa-check"></i> Transportasi VIP</li>
-              <li><i class="fas fa-check"></i> Konsumsi Premium</li>
-              <li><i class="fas fa-check"></i> Pendampingan Khusus</li>
-              <li><i class="fas fa-check"></i> Layanan 24 Jam</li>
-            </ul>
-          </div>
-          <div class="package-footer">
-            <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20Paket%20Premium%20Handling%20(100%20SAR%20per%20pax)%20dari%20Sekar%20Jagad%2043" target="_blank" class="btn btn-whatsapp btn-block" rel="noopener"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
-          </div>
-        </div>
+        <button class="gallery-btn paket-slider-next" aria-label="Paket selanjutnya"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -255,27 +245,18 @@
       <div class="gallery-wrapper">
         <button class="gallery-btn gallery-prev" aria-label="Sebelumnya"><i class="fas fa-chevron-left"></i></button>
         <div class="gallery-scroll" id="galleryScroll">
-          <div class="gallery-track">
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 1</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 2</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 3</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 4</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 5</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 6</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 7</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 8</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 9</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 10</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 11</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 12</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 13</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 14</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 15</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 16</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 17</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 18</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 19</span></div></div>
-            <div class="gallery-item"><div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 20</span></div></div>
+          <div class="gallery-track" id="galleryTrack">
+            <div class="gallery-item" data-static-gallery><img src="assets/images/01.jpeg" alt="Foto 1" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/02.jpeg" alt="Foto 2" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/03.jpeg" alt="Foto 3" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/04.jpeg" alt="Foto 4" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/05.jpeg" alt="Foto 5" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/06.jpeg" alt="Foto 6" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/07.jpeg" alt="Foto 7" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/08.jpeg" alt="Foto 8" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/09.jpeg" alt="Foto 9" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/10.jpeg" alt="Foto 10" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
+            <div class="gallery-item" data-static-gallery><img src="assets/images/11.jpeg" alt="Foto 11" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"></div>
           </div>
         </div>
         <button class="gallery-btn gallery-next" aria-label="Selanjutnya"><i class="fas fa-chevron-right"></i></button>
@@ -289,8 +270,8 @@
       <div class="section-header">
         <h2>Kata Mitra Kami</h2>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card js-reveal">
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <div class="testimonial-card js-reveal" data-static-testimonial>
           <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="testimonial-text">"Pelayanan sangat profesional. Jamaah kami puas dengan handling dari Sekar Jagad 43. Mulai dari penjemputan sampai antar ke hotel berjalan lancar."</p>
           <div class="testimonial-author">
@@ -301,7 +282,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card js-reveal">
+        <div class="testimonial-card js-reveal" data-static-testimonial>
           <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="testimonial-text">"Sudah 5 tahun bekerja sama. Timnya responsif, amanah, dan selalu siap 24 jam. Pelayanan imigrasi kilatnya sangat membantu jamaah kami."</p>
           <div class="testimonial-author">
@@ -312,7 +293,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card js-reveal">
+        <div class="testimonial-card js-reveal" data-static-testimonial>
           <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="testimonial-text">"Handling bandara terbaik yang pernah kami pakai. Porter service-nya cepat, transportasi nyaman, dan konsumsi berkualitas."</p>
           <div class="testimonial-author">
@@ -336,7 +317,7 @@
       <div class="faq-list js-reveal">
         <div class="faq-item" aria-expanded="false">
           <button class="faq-question" aria-controls="faq1"><span>Apa saja layanan yang disediakan?</span><i class="fas fa-chevron-down"></i></button>
-          <div class="faq-answer" id="faq1"><div><p>Imigrasi kilat, penanganan bagasi, porter service, konsumsi, transportasi, dan handling jamaah di Jeddah, Mekkah, Madinah.</p></div></div>
+          <div class="faq-answer" id="faq1"><div><p>Imigrasi kilat, penanganan bagasi, porter service, konsumsi, transportasi, dan handling jamaah di Jeddah, Madinah.</p></div></div>
         </div>
         <div class="faq-item" aria-expanded="false">
           <button class="faq-question" aria-controls="faq2"><span>Bagaimana cara memesan?</span><i class="fas fa-chevron-down"></i></button>
@@ -354,6 +335,28 @@
           <button class="faq-question" aria-controls="faq5"><span>Bagaimana pembayaran?</span><i class="fas fa-chevron-down"></i></button>
           <div class="faq-answer" id="faq5"><div><p>Transfer bank manual. Info rekening via WA setelah pemesanan dikonfirmasi.</p></div></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ARTIKEL TERBARU ══ -->
+  <section class="section" id="artikel">
+    <div class="container">
+      <div class="section-header centered">
+        <h2>Artikel Terbaru</h2>
+        <p>Tips perjalanan umrah, informasi layanan, dan kabar terbaru dari Sekar Jagad 43.</p>
+      </div>
+      <div class="artikel-slider-wrap">
+        <button class="gallery-btn artikel-slider-prev" aria-label="Artikel sebelumnya"><i class="fas fa-chevron-left"></i></button>
+        <div class="artikel-slider-scroll" id="artikelSlider">
+          <div class="artikel-slider-track" id="artikelHomeGrid">
+            <div class="artikel-loading"><i class="fas fa-spinner fa-spin"></i> Memuat artikel…</div>
+          </div>
+        </div>
+        <button class="gallery-btn artikel-slider-next" aria-label="Artikel selanjutnya"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="artikel-home-more">
+        <a href="artikel.html" class="btn btn-outline">Lihat Semua Artikel</a>
       </div>
     </div>
   </section>
@@ -378,28 +381,35 @@
       <div class="contact-grid">
         <div class="contact-items js-reveal">
           <div class="contact-item">
-            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/6285946454995" target="_blank" rel="noopener" class="contact-icon-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <div>
               <h4>WhatsApp</h4>
               <a href="https://wa.me/6285946454995" target="_blank" rel="noopener">+62 859-4645-4995</a>
             </div>
           </div>
           <div class="contact-item">
-            <i class="fas fa-envelope"></i>
+            <a href="https://www.instagram.com/sekarjagadhandling/" target="_blank" rel="noopener" class="contact-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <div>
-              <h4>Email</h4>
-              <a href="mailto:info@sekarjagad43.com">info@sekarjagad43.com</a>
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/sekarjagadhandling/" target="_blank" rel="noopener">@sekarjagadhandling</a>
             </div>
           </div>
           <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.tiktok.com/@sekarjagad43" target="_blank" rel="noopener" class="contact-icon-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <div>
+              <h4>TikTok</h4>
+              <a href="https://www.tiktok.com/@sekarjagad43" target="_blank" rel="noopener">@sekarjagad43</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <a href="#" class="contact-icon-link" aria-label="Lokasi"><i class="fas fa-map-marker-alt"></i></a>
             <div>
               <h4>Lokasi Operasional</h4>
-              <p>Jeddah • Mekkah • Madinah<br>Arab Saudi</p>
+              <p>Jeddah • Madinah</p>
             </div>
           </div>
           <div class="contact-item">
-            <i class="fas fa-clock"></i>
+            <a href="#" class="contact-icon-link" aria-label="Jam Layanan"><i class="fas fa-clock"></i></a>
             <div>
               <h4>Jam Layanan</h4>
               <p>24 Jam Non-Stop<br>7 Hari Seminggu</p>
@@ -408,7 +418,7 @@
         </div>
         <div class="js-reveal">
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.2!2d39.157!3d21.485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced8187a5%3A0x1e2b3c4d5e6f7a8b!2sJeddah%2C%20Saudi%20Arabia!5e0!3m2!1sid!2ssa!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi operasional Sekar Jagad 43 - Jeddah"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59321.256894955586!2d39.11495200261485!3d21.68024582655452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d781e8e6e2ad%3A0x340366416b99128c!2sKing%20Abdulaziz%20International%20Airport!5e0!3m2!1sen!2sid!4v1785144718386!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi operasional Sekar Jagad 43 - Bandara Jeddah"></iframe>
           </div>
         </div>
       </div>
@@ -422,7 +432,7 @@
         <div class="footer-brand">
           <img src="assets/images/logo.png" alt="Sekar Jagad 43" class="footer-logo">
           <h3>Sekar Jagad 43</h3>
-          <p>Mitra terpercaya handling bandara untuk travel umrah Indonesia sejak 2015. Melayani di Jeddah, Mekkah, dan Madinah.</p>
+          <p>Mitra terpercaya handling bandara untuk travel umrah Indonesia sejak 2015. Melayani di Jeddah, dan Madinah.</p>
         </div>
         <div>
           <h4>Layanan</h4>
@@ -440,6 +450,7 @@
             <li><a href="#about">Tentang</a></li>
             <li><a href="#packages">Paket</a></li>
             <li><a href="#gallery">Galeri</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Kontak</a></li>
           </ul>
@@ -447,6 +458,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Sekar Jagad 43. All rights reserved.</p>
+        <p style="margin-top: 6px; font-size: 0.75rem;"><a href="admin-login.html" style="color: oklch(1 0 0 / 0.35);">Admin</a></p>
       </div>
     </div>
   </footer>
@@ -461,6 +473,11 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/config.js?v=4"></script>
+  <script src="assets/js/supabase-client.js?v=5"></script>
+  <script src="assets/js/api.js?v=5"></script>
+  <script src="assets/js/nav-menu.js?v=7"></script>
+  <script src="assets/js/index-data.js?v=7"></script>
 </body>
 </html>

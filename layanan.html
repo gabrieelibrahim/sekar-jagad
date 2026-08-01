@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan — Sekar Jagad 43</title>
+  <meta name="description" content="Detail layanan handling bandara umrah dari Sekar Jagad 43 di Jeddah dan Madinah.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/artikel.css?v=5">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Sekar Jagad 43" class="logo-img">
+        <span class="logo-text">Sekar Jagad <span class="logo-highlight">43</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="index.html#about" class="nav-link">Tentang</a></li>
+        <li class="nav-item-mega nav-has-mega">
+          <a href="index.html#services" class="nav-link">Layanan <i class="fas fa-chevron-down mega-chevron"></i></a>
+          <div class="mega-panel">
+            <div class="mega-panel-title">Layanan Kami</div>
+            <div class="mega-menu-items"></div>
+          </div>
+        </li>
+        <li><a href="index.html#packages" class="nav-link">Paket</a></li>
+        <li><a href="index.html#gallery" class="nav-link">Galeri</a></li>
+        <li><a href="artikel.html" class="nav-link">Artikel</a></li>
+        <li><a href="index.html#contact" class="nav-link">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══ ISI LAYANAN ══ -->
+  <main class="artikel-page">
+    <section class="artikel-detail-section">
+      <div class="container">
+        <div id="layananDetail" class="artikel-detail">
+          <div class="artikel-loading"><i class="fas fa-spinner fa-spin"></i> Memuat layanan…</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Sekar Jagad 43" class="footer-logo">
+          <h3>Sekar Jagad 43</h3>
+          <p>Mitra terpercaya handling bandara untuk travel umrah Indonesia sejak 2015. Melayani di Jeddah, dan Madinah.</p>
+        </div>
+        <div>
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="layanan?slug=imigrasi-kilat">Imigrasi Kilat</a></li>
+            <li><a href="layanan?slug=penanganan-bagasi">Penanganan Bagasi</a></li>
+            <li><a href="layanan?slug=porter-service">Porter Service</a></li>
+            <li><a href="layanan?slug=penanganan-transportasi">Transportasi</a></li>
+            <li><a href="layanan?slug=penyediaan-konsumsi">Konsumsi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html#about">Tentang</a></li>
+            <li><a href="index.html#packages">Paket</a></li>
+            <li><a href="index.html#gallery">Galeri</a></li>
+            <li><a href="artikel.html">Artikel</a></li>
+            <li><a href="index.html#contact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sekar Jagad 43. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/6285946454995?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20layanan%20Sekar%20Jagad%2043" target="_blank" class="floating-wa" aria-label="Chat via WhatsApp" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/config.js?v=4"></script>
+  <script src="assets/js/supabase-client.js?v=5"></script>
+  <script src="assets/js/api.js?v=5"></script>
+  <script src="assets/js/nav-menu.js?v=7"></script>
+  <script src="assets/js/layanan.js?v=7"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug — Detail Artikel</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #111; color: #eee; }
+    pre { background: #222; padding: 12px; border-radius: 6px; overflow-x: auto; }
+    .ok { color: #4caf50; } .err { color: #f44336; } .warn { color: #ff9800; }
+  </style>
+</head>
+<body>
+  <h2>Diagnostik Detail Artikel</h2>
+  <div id="out"><p>Memeriksa…</p></div>
+  <pre id="log"></pre>
+
+  <script src="assets/js/config.js?v=4"></script>
+  <script src="assets/js/supabase-client.js?v=5"></script>
+  <script src="assets/js/api.js?v=4"></script>
+  <script>
+    (async function () {
+      const log = [];
+      const out = document.getElementById('out');
+      const pre = document.getElementById('log');
+      const add = (cls, msg) => log.push(`<span class="${cls}">${msg}</span>`);
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      add('warn', 'URL id = ' + (id ? id : '(KOSONG — coba buka ?id=... )'));
+
+      add('warn', 'SUPABASE_CONFIG.url = ' + (window.SUPABASE_CONFIG ? window.SUPABASE_CONFIG.url : 'undefined'));
+
+      if (!window.API) { add('err', 'API tidak dimuat'); }
+      else {
+        add('warn', 'isReady() = ' + window.API.isReady());
+        try {
+          const ready = await window.API.waitReady(5000);
+          add('warn', 'waitReady = ' + ready);
+          if (ready && id) {
+            try {
+              const a = await window.API.articles.byId(id);
+              add('ok', 'byId → ' + (a ? ('FOUND: ' + a.title) : 'null (TIDAK DITEMUKAN)'));
+              if (a) {
+                add('ok', 'judul: ' + a.title);
+                add('ok', 'status: ' + a.status);
+                add('ok', 'content length: ' + (a.content ? a.content.length : 0));
+              }
+            } catch (e) {
+              add('err', 'byId error: ' + e.message);
+            }
+          }
+        } catch (e) {
+          add('err', 'waitReady error: ' + e.message);
+        }
+      }
+      pre.innerHTML = log.join('\n');
+    })();
+  </script>
+</body>
+</html>

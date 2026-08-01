@@ -74,7 +74,7 @@ Airport ground-handling logistics for umrah travel groups across Saudi Arabia (J
 
 - Homepage + about + gallery + FAQ pages only
 - No backend, no form processing, no new pages
-- CSS/HTML refactor → style.css + responsive.css only
+- CSS/HTML refactor → style.css only (responsive digabung di dalamnya)
 - JS improvements: animations, motion, interactivity
 - Design system: tokens, palette, typography
 
